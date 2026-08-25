@@ -68,11 +68,11 @@
 // }
 // console.log("3")
 
-function ping(){
-    // alert('server ping')
-    container.innerHTML='<h2>Welcome to DOM</h2>'
-    container.appendChild(h1);
-}
+// function ping(){
+//     // alert('server ping')
+//     container.innerHTML='<h2>Welcome to DOM</h2>'
+//     container.appendChild(h1);
+// }
 
 const container = document.getElementById('container');
 console.log(container)
@@ -80,8 +80,42 @@ console.log(container)
 const button = document.getElementById('btn');
 console.log(button)
 
-button.addEventListener('click',ping);
+button.addEventListener('click', ping);
 
-const h1= document.createElement('h1');
+const h1 = document.createElement('h1');
 console.log(h1)
-h1.innerText="ABES"
+h1.innerText = "ABES"
+
+const loader = document.createElement('h2');
+container.appendChild(loader)
+
+const img = document.createElement('img');
+
+const nme = document.createElement('text1');
+
+
+function ping() {
+    try {
+        nme.innerHTML='<h2> ABCD </h2>'
+        loader.innerHTML = '<h2> Loading data ...........</h2>'
+        container.innerHTML = '<h2 style=color:red> Welcome to dom </h2>'
+
+        h1.style.backgroundColor = 'magenta';
+        h1.style.color = 'white';
+        container.appendChild(h1);
+
+        img.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpL0XTfbWeUvncIqw7XmshABalsolGv17hoDqMyxd6Lgw2SpBC2jeOmfk&s=10';
+        img.setAttribute('height', 200);
+        img.setAttribute('width', 200)
+        container.appendChild(img);
+
+        container.appendChild(nme)
+    }
+    catch (e) {
+        loader.innerHTML = '<h2 style =color:blue> Error in loading data </h2>'
+    }
+    finally {
+        // loader.innerHTML='';
+        container.removeChild(loader);
+    }
+}
