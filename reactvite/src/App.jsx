@@ -5,6 +5,9 @@ import viteLogo from './assets/vite.svg'
 import './App.css'
 import Icard from './components/Icard'
 import ICardGallery from './components/ICardGallery'
+import MyState from './components/MyState'
+import Student from './components/MyState'
+import ImageManipulation from './components/ImageManipulation'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +15,9 @@ function App() {
   return (
     <div style = {{border:'2px solid red', width:'800px',height:'800px'}}>
     <h2 style = {{color:'red'}}>Welcome to React App Development</h2>
-    <ICardGallery />
+    {/* <ICardGallery /> */}
+    {/* <Student> </Student> */}
+    <ImageManipulation></ImageManipulation>
     </div>
   )
 }
