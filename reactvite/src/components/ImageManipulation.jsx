@@ -6,6 +6,8 @@ function ImageManipulation() {
     const[red, setred]=useState(0);
     const[green, setgreen]=useState(0);
     const[blue, setblue]=useState(0);
+    const[catAngle , setAngle]=useState(15);
+    
 
     function IncreaseHeight(){
         setHeight(Catheight+10)
@@ -19,23 +21,28 @@ function ImageManipulation() {
         setred(0)
         setblue(0)
         setgreen(0)
+        setAngle(0);
     }
     function Change(){
         setred(Math.random()*255)
         setblue(Math.random()*255)
         setgreen(Math.random()*255)
     }
+    function Rotate(){
+        setAngle(catAngle-10);
+    }
   return (
     <div>ImageManipulation
 
         <div style={{backgroundColor:`rgb(${red},${green}, ${blue})`,height:'300px' , width:'300px', border:'2px solid red' , margin:'auto' ,}}>
-            <img src="https://imgs.search.brave.com/83iznj1fgv-kBnb3PwHE0jXJ35XavtSHWB9TbqSqNYY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YTQuZ2lwaHkuY29t/L21lZGlhL3YxLlky/bGtQVGM1TUdJM05q/RXhhWGRuWXpGNmVE/WXhhbVZsWlhsbVlt/cDBlR1ZyTkhkb05H/UjRkamx4TTNWaE1t/dHBhMkU1TlNabGNE/MTJNVjluYVdaelgz/TmxZWEpqYUNaamRE/MW4vM283YnUxMkdI/bTRHNWZybjZVLzIw/MC5naWY.gif" alt="" height={Catheight} width={Catwidth}  />
+            <img src="https://imgs.search.brave.com/83iznj1fgv-kBnb3PwHE0jXJ35XavtSHWB9TbqSqNYY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YTQuZ2lwaHkuY29t/L21lZGlhL3YxLlky/bGtQVGM1TUdJM05q/RXhhWGRuWXpGNmVE/WXhhbVZsWlhsbVlt/cDBlR1ZyTkhkb05H/UjRkamx4TTNWaE1t/dHBhMkU1TlNabGNE/MTJNVjluYVdaelgz/TmxZWEpqYUNaamRE/MW4vM283YnUxMkdI/bTRHNWZybjZVLzIw/MC5naWY.gif" alt="" height={Catheight} width={Catwidth} style={{transform:`rotate(${catAngle}deg)`}} />
         </div>
         <div><br />
             <button onClick={IncreaseHeight}>IncreAse Height</button><br />
             <button  onClick={IncreaseWidth}>increase width</button><br />
             <button onClick={Reset}>Reset</button><br />
-            <button onClick={Change}>Change BAckground</button>
+            <button onClick={Change}>Change BAckground</button><br />
+            <button onClick={Rotate}>Image ROtate</button>
         </div>
 
     </div>
